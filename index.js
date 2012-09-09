@@ -1,2 +1,2 @@
 require('coffee-script');
-module.exports = require('./emailplate');
+module.exports = require('./lib/emailplate');
