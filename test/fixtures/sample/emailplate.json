@@ -1,6 +1,9 @@
 {
   "name": "sample",
-  "template": "jade",
+  "template": {
+    "engine": "jade",
+    "extension": "jade"
+  },
   "locals": {
     "name": "Jarvis"
   }

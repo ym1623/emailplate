@@ -14,11 +14,13 @@
     "async": "~0.1.22",
     "consolidate": "~0.4.0",
     "stylus": "~0.29.0",
-    "juice": "0.0.6"
+    "juice": "0.0.6",
+    "eco": "~1.1.0-rc-3",
+    "handlebars": "~1.0.6-2",
+    "jade": "~0.27.2"
   },
   "devDependencies": {
     "mocha": "~1.4.2",
-    "chai": "~1.2.0",
-    "jade": "~0.27.2"
+    "chai": "~1.2.0"
   }
 }

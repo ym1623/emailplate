@@ -57,7 +57,7 @@ module.exports = class Emailplate
       options = _.defaults options, info.locals
       async.parallel
         html: (cb) ->
-          cons[info.template] "#{themeDir}/html.#{info.template}", options, cb
+          cons[info.template.engine] "#{themeDir}/html.#{info.template.extension}", options, cb
         css: (cb) ->
           fs.readFile "#{themeDir}/style.styl", 'utf-8', (err, content) ->
             stylus.render content, cb
