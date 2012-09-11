@@ -74,7 +74,6 @@ emailplate.render('theme', {title: "emailplate test"}, function(err, html) {
   
 });
 ```
-```
 
 ## License
 
