@@ -40,6 +40,20 @@ module.exports = class Emailplate
       async.parallel parallel, fn
 
   #
+  # Get Single theme info by a theme name
+  #
+  # @param {String} name
+  # @param {Function} fn
+  #
+  theme: (name, fn) ->
+    fs.readFile "#{@settings.views}/#{name}/emailplate.json", 'utf-8', (err, content) ->
+      if err
+        fn err
+        return
+      info = JSON.parse content
+      fn null, info
+
+  #
   # Render the inline css html with the `theme`, `options` and callback `fn(err, html)`
   #
   # @param {String} theme

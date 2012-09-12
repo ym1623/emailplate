@@ -26,12 +26,16 @@ This `views` option set where the template theme directory is.
 The default theme layout have three files: html.<ext>, style.stylus, emailplate.json
 
 ```
-
+emailplates
+`-- blueprint
+    |-- emailplate.json
+    |-- html.hbs
+    `-- style.styl
 ```
 
 - html.<ext>
 
-  You can use any template engines which [consolidate.js]() supported.
+  emailplate support jade, handlebars, eco, ejs template engine
 
 [consolidate.js]: https://github.com/visionmedia/consolidate.js
 

@@ -7,9 +7,7 @@ describe "Emailplate", ->
 
   beforeEach ->
     emailplate = new Emailplate
-
-  it "should hv default template folder", ->
-    emailplate.get('views').should.be.a 'string'
+      views: __dirname + '/fixtures'
 
   it 'shoud set custom template folder', ->
     emailplate.set 'views', './templates'
@@ -19,14 +17,18 @@ describe "Emailplate", ->
     emailplate.get('views').should.equal './another_templates'
 
   it 'should get the themes info', (done) ->
-    emailplate.set 'views', __dirname + '/fixtures'
-    emailplate.themes (err, files) ->
-      files.should.be.an 'array'
-      files[0].name.should.equal 'sample'
+    emailplate.themes (err, themes) ->
+      themes.should.be.an 'array'
+      themes[0].name.should.equal 'sample'
+      done()
+
+  it 'should get a theme info', (done) ->
+    emailplate.theme 'sample', (err, theme) ->
+      theme.should.be.a 'object'
+      theme.name.should.equal 'sample'
       done()
 
   it 'should render inline css html', (done) ->
-    emailplate.set 'views', __dirname + '/fixtures'
     emailplate.render 'sample', (err, html) ->
       html.should.be.a 'string'
       done()

@@ -17,7 +17,8 @@
     "juice": "0.0.6",
     "eco": "~1.1.0-rc-3",
     "handlebars": "~1.0.6-2",
-    "jade": "~0.27.2"
+    "jade": "~0.27.2",
+    "ejs": "~0.8.2"
   },
   "devDependencies": {
     "mocha": "~1.4.2",
