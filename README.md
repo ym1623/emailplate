@@ -63,10 +63,18 @@ emailplate.set('views', __dirname + '/emailplates');
 emailplate.get('views');
 ```
 
-### Themes info
+### Get all themes info
 
 ```js
-emailplate.themes(function(err, info) {
+emailplate.themes(function(err, infos) {
+  
+});
+```
+
+### Get single theme info
+
+```js
+emailplate.theme('themeName', function(err, info) {
   
 });
 ```
@@ -74,7 +82,7 @@ emailplate.themes(function(err, info) {
 ### Render theme
 
 ```js
-emailplate.render('theme', {title: "emailplate test"}, function(err, html) {
+emailplate.render('themeName', {title: "emailplate test"}, function(err, html) {
   
 });
 ```
