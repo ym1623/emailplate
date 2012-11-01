@@ -29,10 +29,11 @@ module.exports = class Emailplate
   #
   # @param {Function} fn
   #
+
   themes: (fn) ->
     glob "#{@settings.views}/**/emailplate.json", (err, files) ->
       parallel = []
-      for file in files
+      _.each files, (file) ->
         parallel.push (cb) ->
           fs.readFile file, 'utf-8', (err, content) ->
             info = JSON.parse content
@@ -45,6 +46,7 @@ module.exports = class Emailplate
   # @param {String} name
   # @param {Function} fn
   #
+
   theme: (name, fn) ->
     fs.readFile "#{@settings.views}/#{name}/emailplate.json", 'utf-8', (err, content) ->
       if err
@@ -61,6 +63,7 @@ module.exports = class Emailplate
   # @param {Function} fn
   # @api public
   #
+  
   render: (theme, options, fn) ->
     if _.isFunction options
       fn = options
