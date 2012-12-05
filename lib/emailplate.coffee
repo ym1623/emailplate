@@ -49,9 +49,7 @@ module.exports = class Emailplate
 
   theme: (name, fn) ->
     fs.readFile "#{@settings.views}/#{name}/emailplate.json", 'utf-8', (err, content) ->
-      if err
-        fn err
-        return
+      return fn err if err
       info = JSON.parse content
       fn null, info
 
